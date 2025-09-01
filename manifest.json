@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Gladiatus EDU Extension",
+  "description": "Extensie educațională pentru a învăța cum funcționează un addon de tip Gladiatus Companion (fără automatizare).",
+  "version": "1.0",
+  "permissions": ["storage", "alarms", "notifications", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.gladiatus.gameforge.com/*"],
+      "js": ["content/content.js"],
+      "css": ["content/styles.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "options/options.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
